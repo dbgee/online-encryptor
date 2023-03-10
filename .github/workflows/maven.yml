@@ -33,5 +33,8 @@ jobs:
     - name: Package with Maven
       run: mvn clean package
       
-    - name: Run with java
-      run: java -jar target/online-encryptor-0.1.0.jar
+    - name: upload jar
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-test.jar
+        path: target/*.jar
